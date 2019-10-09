@@ -1,6 +1,4 @@
+import { initialState, reducer } from '../reducer/featureReducer' }
 
 
-
-
-  
-// export reducer()(store);
+export { featureReducer } from './featureReducer'

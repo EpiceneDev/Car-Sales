@@ -1,3 +1,5 @@
+
+
 export const initialState = {
     additionalPrice: 0,
     car: {
@@ -15,9 +17,17 @@ export const initialState = {
     ]
   }
 
-export const reducer = (state = initialState, action) => {
+export const featureReducer = (state = initialState, action) => {
     switch(action.type) {
-        default:
-        return state;
+        case 'ADD_FEATURE':
+            const newFeature = {
+                id: Date.now(),
+                name: action.payload,
+                purchased: false
+            };
+            return {
+                ...state,
+                feature: [...state.additionalFeatures, newFeature],
+            };
     }
 }

@@ -1,30 +1,30 @@
 import React, {dispatch} from 'react';
 import { connect } from 'react-redux';
-import Header from './components/Header';
-import AddedFeatures from './components/AddedFeatures';
-import AdditionalFeatures from './components/AdditionalFeatures';
-import Total from './components/Total';
+import Header from './Header';
+import AddedFeatures from './AddedFeatures';
+import AdditionalFeatures from './AdditionalFeatures';
+import Total from './Total';
 
 
 
-const App = (props) => {
+const Dashboard = (props) => {
   const { state, removeFeature } = props
  
  
   const removeFeature = item => {
-    return {
-      type: "REMOVE_FEATURES",
-      payload: item
-    }
+    // return {
+    //   type: "REMOVE_FEATURES",
+    //   payload: item
+    // }
   };
-  };
+  
 
   const buyItem = item => {
     // dipsatch an action here to add an item
-    dispatch({
-      type: "BUY_ITEM",
-      state.car.features: action.payload
-    })
+    // dispatch({
+    //   type: "BUY_ITEM",
+    //   state.car.features: action.payload
+    // })
   };
 
   return (
@@ -45,4 +45,4 @@ const mapStateToProps = (state) => {
   return {state};
 }
 
-export default connect (mapStateToProps, {buyItem, removeFeature})(App);
+export default connect(mapStateToProps, {buyItem, removeFeature})(Dashboard);
