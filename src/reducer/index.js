@@ -1,4 +1,4 @@
-import { initialState, reducer } from '../reducer/featureReducer' }
+import { featureReducer } from '../reducer/featureReducer';
 
 
-export { featureReducer } from './featureReducer'
+export { featureReducer };

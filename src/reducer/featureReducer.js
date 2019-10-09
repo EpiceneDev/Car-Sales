@@ -1,6 +1,6 @@
 
 
-export const initialState = {
+const initialState = {
     additionalPrice: 0,
     car: {
         price: 26395,
@@ -29,5 +29,7 @@ export const featureReducer = (state = initialState, action) => {
                 ...state,
                 feature: [...state.additionalFeatures, newFeature],
             };
+        default:
+            return state;
     }
 }

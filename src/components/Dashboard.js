@@ -1,4 +1,4 @@
-import React, {dispatch} from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import Header from './Header';
 import AddedFeatures from './AddedFeatures';
@@ -7,20 +7,22 @@ import Total from './Total';
 
 
 
-const Dashboard = (props) => {
-  const { state, removeFeature } = props
+const Dashboard = ({state}) => {
+  
  
  
   const removeFeature = item => {
-    // return {
-    //   type: "REMOVE_FEATURES",
-    //   payload: item
-    // }
+    console.log("removeFeature: ", item)
+    return {
+      type: "REMOVE_FEATURES",
+      payload: item
+    }
   };
   
 
   const buyItem = item => {
-    // dipsatch an action here to add an item
+    console.log("buyItem: ", item)
+    
     // dispatch({
     //   type: "BUY_ITEM",
     //   state.car.features: action.payload
@@ -34,7 +36,7 @@ const Dashboard = (props) => {
         <AddedFeatures car={state.car} removeFeature={removeFeature} />
       </div>
       <div className="box">
-        <AdditionalFeatures store={state.store} />
+        <AdditionalFeatures store={state.additionalFeatures} />
         <Total car={state.car} additionalPrice={state.additionalPrice} />
       </div>
     </div>

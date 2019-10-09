@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const mapStateToProps = state => ({ todos: state.todos })
-
 const AddedFeature = props => {
   return (
     <li>
@@ -13,4 +11,6 @@ const AddedFeature = props => {
   );
 };
 
-export default AddedFeature;
+const mapStateToProps = state => ({ todos: state.todos })
+
+export default connect(mapStateToProps, {})(AddedFeature);
